@@ -28,6 +28,7 @@ function hoverCardEnter() {
       showAvatarDetail.value = true;
     }, hoverCardDelay.value);
 }
+
 function hoverCardLeave() {
     clearTimeout(hoverCardTimout.value);
     if (!showAvatarDetail.value) return;
