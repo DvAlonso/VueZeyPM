@@ -31,9 +31,10 @@ const submit = () => {
 
 <template>
     <GuestLayout>
+
         <Head title="Log in" />
 
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+        <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
 
@@ -42,32 +43,19 @@ const submit = () => {
             <!-- Form itself -->
             <div>
                 <InputLabel required for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
+                <TextInput id="email" type="email" class="block w-full mt-1" v-model="form.email" required autofocus
+                    autocomplete="username" />
             </div>
             <div>
                 <InputLabel required for="password" value="Password" />
-                 <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="current-password"
-                />
+                <TextInput id="password" type="password" class="block w-full mt-1" v-model="form.password" required
+                    autocomplete="current-password" />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
-             <div class="block">
+            <div class="block">
                 <label class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="text-xs font-semibold ml-2 text-secondary-700">Remember me</span>
+                    <span class="ml-2 text-xs font-semibold text-secondary-700">Remember me</span>
                 </label>
             </div>
             <!-- Submit -->
@@ -92,12 +80,9 @@ const submit = () => {
             <div class="">
                 <p class="text-sm text-center text-gray-700">
                     Don't have an account?
-                    <Link
-                        :href="route('register')"
-                        class="text-primary-700 hover:text-primary-900"
-                    >
+                    <Link :href="route('register')" class="text-primary-700 hover:text-primary-900">
                     Sign up
-                </Link>
+                    </Link>
                 </p>
             </div>
         </form>

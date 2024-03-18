@@ -44,6 +44,47 @@ class BreadcrumbService
                     'params' => ['company'],
                 ],
             ],
+            'app.message-board.index' => [
+                [
+                    'label' => 'Dashboard',
+                    'route' => 'app.companies.dashboard',
+                    'params' => ['company'],
+                ],
+                [
+                    'label' => 'Message Board',
+                    'route' => 'app.message-board.index',
+                    'params' => ['company'],
+                ],
+            ],
+            'app.message-board.create' => [
+                [
+                    'label' => 'Dashboard',
+                    'route' => 'app.companies.dashboard',
+                    'params' => ['company'],
+                ],
+                [
+                    'label' => 'Message Board',
+                    'route' => 'app.message-board.index',
+                    'params' => ['company'],
+                ],
+                [
+                    'label' => 'New post',
+                    'route' => 'app.message-board.create',
+                    'params' => ['company'],
+                ],
+            ],
+            'app.users.index' => [
+                [
+                    'label' => 'Dashboard',
+                    'route' => 'app.companies.dashboard',
+                    'params' => ['company'],
+                ],
+                [
+                    'label' => 'Users',
+                    'route' => 'app.users.index',
+                    'params' => ['company'],
+                ],
+            ],
             'app.teams.index' => [
                 [
                     'label' => 'Dashboard',

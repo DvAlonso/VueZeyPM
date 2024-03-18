@@ -12,25 +12,28 @@ import { IconLayoutDashboard, IconMessages, IconUser, IconUsersGroup, IconLock, 
             company selector
         </div>
         <div class="flex flex-col px-4 py-4 gap-y-1">
-            <NavLink :href="route('app.companies.dashboard', route().params.company)" :active="route().current('app.companies.dashboard')">
+            <NavLink :href="route('app.companies.dashboard', route().params.company)"
+                :active="route().current('app.companies.dashboard')">
                 <template v-slot:icon>
-                    <IconLayoutDashboard/>
+                    <IconLayoutDashboard />
                 </template>
                 <template v-slot:label>
                     Dashboard
                 </template>
             </NavLink>
-            <NavLink :href="route('app.teams.index', route().params.company)" :active="route().current('app.teams.index')">
+            <NavLink :href="route('app.message-board.index', route().params.company)"
+                :active="route().current('app.message-board.*')">
                 <template v-slot:icon>
-                    <IconMessages/>
+                    <IconMessages />
                 </template>
                 <template v-slot:label>
                     Message board
                 </template>
             </NavLink>
-            <NavLink :href="route('app.users.index', route().params.company)" :active="route().current('app.users.index')">
+            <NavLink :href="route('app.users.index', route().params.company)"
+                :active="route().current('app.users.index')">
                 <template v-slot:icon>
-                    <IconUser/>
+                    <IconUser />
                 </template>
                 <template v-slot:label>
                     Users
@@ -38,23 +41,25 @@ import { IconLayoutDashboard, IconMessages, IconUser, IconUsersGroup, IconLock, 
             </NavLink>
             <NavLink :href="route('app.teams.index', route().params.company)" :active="route().current('app.teams.*')">
                 <template v-slot:icon>
-                    <IconUsersGroup/>
+                    <IconUsersGroup />
                 </template>
                 <template v-slot:label>
                     Teams
                 </template>
             </NavLink>
-            <NavLink :href="route('app.roles.index', route().params.company)" :active="route().current('app.roles.index')">
+            <NavLink :href="route('app.roles.index', route().params.company)"
+                :active="route().current('app.roles.index')">
                 <template v-slot:icon>
-                    <IconLock/>
+                    <IconLock />
                 </template>
                 <template v-slot:label>
                     Roles
                 </template>
             </NavLink>
-            <NavLink :href="route('app.teams.index', route().params.company)" :active="route().current('app.teams.index')">
+            <NavLink :href="route('app.teams.index', route().params.company)"
+                :active="route().current('app.teams.index')">
                 <template v-slot:icon>
-                    <IconSettings/>
+                    <IconSettings />
                 </template>
                 <template v-slot:label>
                     Settings

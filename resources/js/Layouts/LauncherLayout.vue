@@ -6,7 +6,6 @@
 // import NavLink from '@/Components/NavLink.vue';
 // import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 // import { Link } from '@inertiajs/vue3';
-
 </script>
 
 <template>

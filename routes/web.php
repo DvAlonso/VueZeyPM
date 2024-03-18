@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Company\DashboardController;
+use App\Http\Controllers\Company\MessageBoardController;
 use App\Http\Controllers\Company\RoleController;
 use App\Http\Controllers\Company\TeamController;
 use App\Http\Controllers\Company\UserController;
@@ -44,7 +45,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('teams')->group(function () {
             Route::get('/', [TeamController::class, 'index'])->name('app.teams.index');
             Route::get('/create', [TeamController::class, 'create'])->name('app.teams.create');
-            Route::post('/create', [TeamController::class, 'store'])->name('app.teams.store');
+            Route::post('/store', [TeamController::class, 'store'])->name('app.teams.store');
             // Route::get('/{team}', ShowTeam::class)->name('app:teams:show');
             // Route::get('/{team}/edit', UpdateTeam::class)->name('app:teams:update');
         });
@@ -55,6 +56,14 @@ Route::middleware('auth')->group(function () {
             // Route::get('/create', CreateTeam::class)->name('app:teams:create');
             // Route::get('/{team}', ShowTeam::class)->name('app:teams:show');
             // Route::get('/{team}/edit', UpdateTeam::class)->name('app:teams:update');
+        });
+
+        Route::prefix('message-board')->group(function () {
+            Route::get('/', [MessageBoardController::class, 'index'])->name('app.message-board.index');
+            Route::get('/create', [MessageBoardController::class, 'create'])->name('app.message-board.create');
+            Route::post('/store', [MessageBoardController::class, 'store'])->name('app.message-board.store');
+            Route::get('/{post}/edit', [MessageBoardController::class, 'edit'])->name('app.message-board.edit');
+            Route::post('/{post}/update', [MessageBoardController::class, 'update'])->name('app.message-board.update');
         });
 
         // Role management

@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $team = $team_service->createTeam($company, 'Laravel developers', 'The group of users that make this application possible.', [$user->id]);
 
         $users = User::factory()->count(10)->create();
+        $company_service->attachUsers($company, $users->pluck('id')->toArray());
         $team_service->attachUsers($team, $users->pluck('id')->toArray());
     }
 }
